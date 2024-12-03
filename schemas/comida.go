@@ -13,7 +13,7 @@ type Comida struct {
 	Caloria int64
 }
 
-type OpeningResponse struct {
+type ComidaResponse struct {
 	ID        uint      `json:"id"`
 	CreatedAt time.Time `json:"createdAt"`
 	UpdatedAt time.Time `json:"updatedAt"`

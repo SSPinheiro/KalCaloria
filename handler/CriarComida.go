@@ -26,8 +26,9 @@ func CriarComidaHandler(ctx *gin.Context) {
 
 	if err := db.Create(&comida).Error; err != nil {
 		logger.Errorf("erro creating comida: %+v", err.Error())
+		sendError(ctx, http.StatusInternalServerError, "error creating comida on database")
 		return
 	}
 
-	sendSucess(ctx, "create-opening", comida)
+	sendSucess(ctx, "create-comidaa", comida)
 }

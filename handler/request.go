@@ -13,7 +13,7 @@ type CriarComidaRequest struct {
 }
 
 func (r *CriarComidaRequest) Validate() error {
-	if r.Nome == "" && r.Tipo == "" && r.Caloria >= 0 {
+	if r.Nome == "" && r.Tipo == "" && r.Caloria <= 0 {
 		return fmt.Errorf("request body is empty")
 	}
 	if r.Nome == "" {
