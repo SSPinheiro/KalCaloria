@@ -29,3 +29,16 @@ func (r *CriarComidaRequest) Validate() error {
 	return nil
 
 }
+
+type AlterarComidaRequest struct {
+	Nome    string `json:"nome"`
+	Tipo    string `json:"tipo"`
+	Caloria int64  `json:"caloria"`
+}
+
+func (r *AlterarComidaRequest) Validate() error {
+	if r.Nome != "" || r.Tipo != "" || r.Caloria > 0 {
+		return nil
+	}
+	return fmt.Errorf("at least one valid field must be provided")
+}
